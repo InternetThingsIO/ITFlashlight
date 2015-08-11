@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Flashlight</string>
+    <string name="action_settings">Settings</string>
+    <color name ="black">#000000</color>
+    <color name ="red">#e74c3c</color>
+    <color name ="green">#16a085</color>
+    <color name ="darkred">#813028</color>
+    <color name ="darkgreen">#116353</color>
+    <string name ="on">ON</string>
+    <string name ="off">OFF</string>
+           
+
+</resources>

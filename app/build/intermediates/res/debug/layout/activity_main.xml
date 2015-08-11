@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" 
+    android:background="@color/darkgreen"
+    android:onClick = "clickLayout">
+
+    <TextView
+        android:id="@+id/textViewTAP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="142dp"
+        android:text="TAP"
+        android:textColor="@color/green"
+        android:textSize="75dp"
+        android:textStyle="normal"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/textViewScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewTAP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:text="SCREEN"
+        android:textColor="@color/green"
+        android:textSize="35dp" />
+
+    <TextView
+        android:id="@+id/textViewToTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewScreen"
+        android:layout_below="@+id/textViewScreen"
+        android:text="TO TURN"
+        android:textColor="@color/green"
+        android:textSize="21dp" />
+
+    <TextView
+        android:id="@+id/TextView0ff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewToTurn"
+        android:layout_alignBottom="@+id/textViewToTurn"
+        android:layout_alignRight="@+id/textViewScreen"
+        android:text="@string/off"
+        android:textColor="@color/red"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/logowhite"
+        android:onClick="openWebsite"
+        android:src="@drawable/logowhite"
+        android:visibility="visible" />
+
+</RelativeLayout>
+<!-- From: file:/C:/Users/Dev/Documents/ITFlashlight/app/src/main/res/layout/activity_main.xml -->
