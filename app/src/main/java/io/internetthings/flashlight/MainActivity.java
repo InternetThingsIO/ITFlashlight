@@ -3,11 +3,15 @@ package io.internetthings.flashlight;
 import java.io.IOException;
 
 import io.internetthings.flashlight.R;
+
+import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -46,10 +50,14 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		//Keep Screen ON
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-		
-		setFonts();
+        //Dims screen when turned on
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.screenBrightness = 0.01f;
+        getWindow().setAttributes(lp);
+
+        setFonts();
 	}
 	
 	//starts / stops flashlight and changes background color
@@ -94,7 +102,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void darkgreenBackground(){
-		layout.setBackgroundColor(getResources().getColor(R.color.darkgreen));
+		layout.setBackgroundColor(getResources().getColor(R.color.black));
 		textColor = (TextView)findViewById(R.id.TextView0ff);
 		textColor.setText(R.string.off);
 		textColor.setTextSize(22);
@@ -189,6 +197,7 @@ public class MainActivity extends Activity {
 	protected void onPause(){
 		super.onPause();		
 		killCamera();
+        Log.i("Ran: ", "onPause()");
 		//Toast.makeText(getApplicationContext(), "Pause",Toast.LENGTH_SHORT).show();
 	}
 	
@@ -200,7 +209,7 @@ public class MainActivity extends Activity {
 	protected void onStart(){
 		super.onStart();
 		getCamera();
-		if(flag == true){			
+		if(flag == true){
 			turnOnFlash();
 			//Toast.makeText(getApplicationContext(), "Resume Flash" ,Toast.LENGTH_SHORT).show();
 		}
@@ -218,6 +227,7 @@ public class MainActivity extends Activity {
 	protected void onStop(){
 		super.onStop();
 		killCamera();
+        Log.i("Ran: ", "onStop()");
 	}
 	
 	private void killCamera(){
