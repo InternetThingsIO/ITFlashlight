@@ -100,7 +100,7 @@ public class MainActivity extends Activity {
 		textColor = (TextView)findViewById(R.id.TextView0ff);
 		textColor.setText(R.string.off);
 		textColor.setTextSize(22);
-		textColor.setTextColor(getResources().getColor(R.color.red));
+		textColor.setTextColor(getResources().getColor(R.color.darkred));
 		
 		textColor = (TextView)findViewById(R.id.textViewTAP);
 		textColor.setTextColor(getResources().getColor(R.color.darkgreen));

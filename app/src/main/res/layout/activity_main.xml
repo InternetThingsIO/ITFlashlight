@@ -50,7 +50,7 @@
         android:layout_alignBottom="@+id/textViewToTurn"
         android:layout_alignRight="@+id/textViewScreen"
         android:text="@string/off"
-        android:textColor="@color/red"
+        android:textColor="@color/darkred"
         android:textSize="22dp"
         android:textStyle="bold" />
 
