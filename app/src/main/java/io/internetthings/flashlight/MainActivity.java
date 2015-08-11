@@ -2,24 +2,15 @@ package io.internetthings.flashlight;
 
 import java.io.IOException;
 
-import io.internetthings.flashlight.R;
-
-import android.content.ContentResolver;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.Menu;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.content.Context;
 import android.content.Intent;
@@ -39,10 +30,10 @@ public class MainActivity extends Activity {
 	private String website = "http://www.internetthings.io";
 	
 	private RelativeLayout layout;
-	private ImageButton webLinkButton;
 	private Camera camera;
 	private SurfaceTexture texture;
 	private TextView textColor;
+    private ImageView itlogo;
 	
 	private boolean flag = true;
 
@@ -71,12 +62,12 @@ public class MainActivity extends Activity {
 	public void checksFlag(){
 				
 		if(flag){
-			darkredBackground();			
+			darkredBackground();
 			turnOffFlash();
 			flag = false;
 		}
 		else{					
-			darkgreenBackground();			
+			blackBackground();
 			turnOnFlash();
 			flag = true;
 		}	
@@ -99,9 +90,12 @@ public class MainActivity extends Activity {
 		
 		textColor = (TextView)findViewById(R.id.textViewScreen);
 		textColor.setTextColor(getResources().getColor(R.color.red));
+
+        itlogo = (ImageView)findViewById(R.id.imageButton2);
+        itlogo.setBackgroundResource(R.drawable.logowhite);
 	}
 	
-	public void darkgreenBackground(){
+	public void blackBackground(){
 		layout.setBackgroundColor(getResources().getColor(R.color.black));
 		textColor = (TextView)findViewById(R.id.TextView0ff);
 		textColor.setText(R.string.off);
@@ -109,14 +103,17 @@ public class MainActivity extends Activity {
 		textColor.setTextColor(getResources().getColor(R.color.red));
 		
 		textColor = (TextView)findViewById(R.id.textViewTAP);
-		textColor.setTextColor(getResources().getColor(R.color.green));
+		textColor.setTextColor(getResources().getColor(R.color.darkgreen));
 		
 		textColor = (TextView)findViewById(R.id.textViewToTurn);
 		textColor.setTextSize(21);
-		textColor.setTextColor(getResources().getColor(R.color.green));
+		textColor.setTextColor(getResources().getColor(R.color.darkgreen));
 		
 		textColor = (TextView)findViewById(R.id.textViewScreen);
-		textColor.setTextColor(getResources().getColor(R.color.green));
+		textColor.setTextColor(getResources().getColor(R.color.darkgreen));
+
+        itlogo = (ImageView)findViewById(R.id.imageButton2);
+        itlogo.setBackgroundResource(R.drawable.logoyellow);
 	}
 		
 	//Opens WEBSITE
@@ -213,7 +210,7 @@ public class MainActivity extends Activity {
 			//Toast.makeText(getApplicationContext(), "Resume Flash" ,Toast.LENGTH_SHORT).show();
 		}
 		else{
-			darkgreenBackground();			
+			blackBackground();
 			turnOnFlash();
 			flag = true;
 		}
