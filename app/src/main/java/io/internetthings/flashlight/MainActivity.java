@@ -197,7 +197,6 @@ public class MainActivity extends Activity {
 	protected void onPause(){
 		super.onPause();		
 		killCamera();
-        Log.i("Ran: ", "onPause()");
 		//Toast.makeText(getApplicationContext(), "Pause",Toast.LENGTH_SHORT).show();
 	}
 	
@@ -227,7 +226,6 @@ public class MainActivity extends Activity {
 	protected void onStop(){
 		super.onStop();
 		killCamera();
-        Log.i("Ran: ", "onStop()");
 	}
 	
 	private void killCamera(){
